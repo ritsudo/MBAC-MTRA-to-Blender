@@ -7,7 +7,7 @@ action with keyframed pose bones.
 
 ## Install (Blender 4.0)
 
-1. Download the latest .zip archive with addon from the Releases section"
+1. Download the latest .zip archive with addon from the Releases section
 2. In Blender: **Edit > Preferences > Add-ons > Install...** and pick the zip.
 3. Enable **MascotCapsule MBAC/MTRA Importer**.
 
@@ -36,6 +36,7 @@ This plugin incorporates code and algorithmic concepts from the following projec
 * [MascotCapsule — `mtratool.py`](https://github.com/j2me-preservation/MascotCapsule/blob/master/tools/mtratool.py)
 * [MBAC-to-OBJ — `Program.cs`](https://github.com/Durik256/MBAC-to-OBJ/blob/master/Program.cs)
 * [Noesis-Plugins — `fmt_mbac.py`](https://github.com/Durik256/Noesis-Plugins/blob/master/fmt_mbac.py)
+
 The plugin also incorporates functionality based on the original **PVMicro toolkit**.
 Some of this functionality was **recreated with the assistance of AI** rather 
 than reverse-engineered.
