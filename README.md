@@ -1,3 +1,5 @@
+![Screenshot](screen.png)
+
 # MascotCapsule MBAC/MTRA -> Blender
 
 A Blender 4.0 add-on that imports MascotCapsule Micro3D binary models
