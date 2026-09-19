@@ -43,6 +43,8 @@ The plugin also incorporates functionality based on the original **PVMicro toolk
 Some of this functionality was **recreated with the assistance of AI** rather 
 than reverse-engineered.
 
+## Licensing
+For the forks utilizing the code or code part, released after 2026.09.19, please provide the link to this repository as a reference.
 
 ## What it builds
 
