@@ -1,7 +1,7 @@
 """
 User interface for the MascotCapsule add-on.
 
-Only this module and :mod:`addon_output.importer` depend on ``bpy``.
+Only this module and :mod:`mascotcapsule_addon.importer` depend on ``bpy``.
 """
 
 import os

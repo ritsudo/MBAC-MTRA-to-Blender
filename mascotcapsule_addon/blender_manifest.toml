@@ -1,0 +1,23 @@
+schema_version = "1.0.0"
+
+id = "mascotcapsule_mbac_mtra"
+version = "1.0.0"
+name = "MascotCapsule MBAC/MTRA Importer"
+tagline = "Import MascotCapsule Micro3D models and animations"
+maintainer = "ritsudo"
+type = "add-on"
+
+website = "https://github.com/ritsudo/MBAC-MTRA-to-Blender"
+tags = ["Import-Export", "Rigging", "Animation", "Modeling"]
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+copyright = [
+  "2026 ritsudo",
+]
+
+[permissions]
+files = "Import MBAC/MTRA files and their textures from disk"

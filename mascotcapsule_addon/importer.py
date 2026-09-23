@@ -2,7 +2,7 @@
 Blender scene construction from parsed MBAC + MTRA data.
 
 This is the only module (besides ui.py) that touches ``bpy``.  All parsing and
-matrix math lives in :mod:`addon_output.core`.
+matrix math lives in :mod:`mascotcapsule_addon.core`.
 """
 
 import math
@@ -402,9 +402,35 @@ def _build_animation(context, arm_obj, mbac, mtra, rest_world, rot4, fps,
             pose_bone.keyframe_insert('rotation_quaternion', frame=frame)
             pose_bone.keyframe_insert('scale', frame=frame)
 
-    for fcurve in action.fcurves:
+    for fcurve in _action_fcurves(arm_obj, action):
         for keyframe in fcurve.keyframe_points:
             keyframe.interpolation = 'LINEAR'
+
+
+def _action_fcurves(arm_obj, action):
+    """F-Curves of an action, across Blender's legacy and slotted APIs.
+
+    Blender 4.4 introduced slotted actions and Blender 5.0 removed the legacy
+    ``Action.fcurves`` property; the F-Curves now live in the channelbag bound
+    to the action slot.  Fall back to ``Action.fcurves`` for Blender <= 4.3.
+    """
+    anim_data = arm_obj.animation_data
+    slot = getattr(anim_data, 'action_slot', None) if anim_data else None
+    if slot is not None:
+        try:
+            from bpy_extras import anim_utils
+        except ImportError:
+            anim_utils = None
+        get_channelbag = (getattr(anim_utils, 'action_get_channelbag_for_slot', None)
+                          if anim_utils is not None else None)
+        if get_channelbag is not None:
+            channelbag = get_channelbag(action, slot)
+            if channelbag is not None:
+                return list(channelbag.fcurves)
+    try:
+        return list(action.fcurves)
+    except AttributeError:
+        return []
 
 
 def _frame_union(action_data):
