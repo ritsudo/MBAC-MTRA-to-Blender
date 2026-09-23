@@ -1,4 +1,5 @@
 ![Screenshot](screen.png)
+Reference screenshots: FishLabs's old 2000's games (demo purpose only)
 
 # MascotCapsule MBAC/MTRA -> Blender
 
